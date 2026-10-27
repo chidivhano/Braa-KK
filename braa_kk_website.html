@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAA KK Sand & Supplies</title>
+    <link rel="icon" type="image/jpeg" href="images/braa_kk_logo.jpg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config to match brand colors from the signage -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#1e5631', /* Darker green dominating */
+                            lightGreen: '#7bc043', /* Bright green from the tree/logo as accent */
+                            dark: '#111111',  /* Dark background from the sign */
+                            blue: '#7bcbc4',  /* Light blue from the arrows */
+                            light: '#f4f4f5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #1e5631; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #143d22; }
+        
+        .hero-bg {
+            /* Full width background image with a dark overlay for text readability */
+            background: linear-gradient(rgba(17, 17, 17, 0.72), rgba(17, 17, 17, 0.72)), url('images/hero_image.png') center/cover no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-brand-green selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo area -->
+                <a href="#home" class="flex-shrink-0 flex items-center gap-3 group">
+                    <img src="images/braa_kk_logo.jpg" alt="BRAA KK Logo" class="h-12 w-12 rounded-full object-contain shadow-sm border border-brand-green/20 group-hover:scale-105 transition-transform">
+                    <span class="font-extrabold text-2xl tracking-tighter text-brand-dark">BRAA KK</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-600 hover:text-brand-green font-semibold transition">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-brand-green font-semibold transition">About Us</a>
+                    <a href="#services" class="text-gray-600 hover:text-brand-green font-semibold transition">Services</a>
+                    <a href="#products" class="text-gray-600 hover:text-brand-green font-semibold transition">Products</a>
+                    <a href="#gallery" class="text-gray-600 hover:text-brand-green font-semibold transition">Gallery</a>
+                    <a href="#contact" class="bg-brand-green text-white px-6 py-2 rounded-full font-bold hover:bg-green-600 shadow-lg shadow-green-200 transition transform hover:-translate-y-0.5">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-green focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:bg-green-50 hover:text-brand-green">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:bg-green-50 hover:text-brand-green">About Us</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:bg-green-50 hover:text-brand-green">Services</a>
+                <a href="#products" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:bg-green-50 hover:text-brand-green">Products</a>
+                <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:bg-green-50 hover:text-brand-green">Gallery</a>
+                <a href="#contact" class="block px-3 py-2 mt-4 text-center rounded-md text-base font-bold bg-brand-green text-white hover:bg-brand-lightGreen">Call: 065 859 7453</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight drop-shadow-lg">
+                Build Strong.<br>
+                <span class="text-brand-lightGreen">Build Right.</span><br>
+                Build with BRAA KK.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto drop-shadow-md">
+                Your trusted supplier of sand, bricks, building materials, and heavy-duty transport in Soweto. Whether you are building from the ground up or just need a truckload of sand, we are here to make your job easier.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+                <a href="#products" class="bg-brand-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-lightGreen hover:text-brand-dark transition flex items-center justify-center gap-2 shadow-lg border-2 border-brand-green hover:border-brand-lightGreen">
+                    <i class="fa-solid fa-cubes"></i> View Our Products
+                </a>
+                <a href="tel:0658597453" class="bg-transparent border-2 border-brand-lightGreen text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-lightGreen hover:text-brand-dark transition flex items-center justify-center gap-2 shadow-lg">
+                    <i class="fa-solid fa-phone"></i> 065 859 7453
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2">
+                    <img src="images/about_us.webp" alt="Braa KK Yard in Soweto" class="rounded-2xl shadow-xl w-full object-cover">
+                </div>
+                <div class="md:w-1/2 space-y-6">
+                    <div class="inline-block px-4 py-1 bg-green-100 text-brand-green rounded-full font-bold text-sm uppercase tracking-wide">About Us</div>
+                    <h2 class="text-4xl font-extrabold text-brand-dark">Your Partner on the <span class="text-brand-lightGreen">Building Site</span></h2>
+                    
+                    <blockquote class="border-l-4 border-brand-lightGreen pl-4 italic text-gray-600 text-lg bg-gray-50 py-3 pr-3 rounded-r-lg">
+                        "Braa KK is a supplier of Sand, Hardware, and Building materials offering a wide range of services including Sand supplies, Transportation, Demolition, and site clearance. We have the ability and resources to source and supply all quantities of sand materials."
+                    </blockquote>
+                    
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        Located in the heart of Protea Glen, Soweto, we understand the hard work that goes into building. That is why we provide fair prices, fast delivery, and materials you can trust. 
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        From the first brick laid to the final roof tile, BRAA KK is with you every step of the way. We are proud to help our community build strong, safe, and beautiful homes.
+                    </p>
+                    
+                    <div class="pt-4 flex gap-6">
+                        <div class="flex flex-col">
+                            <span class="text-3xl font-extrabold text-brand-green">100%</span>
+                            <span class="text-sm text-gray-500 font-semibold uppercase">Reliable</span>
+                        </div>
+                        <div class="w-px bg-gray-200"></div>
+                        <div class="flex flex-col">
+                            <span class="text-3xl font-extrabold text-brand-green">Fast</span>
+                            <span class="text-sm text-gray-500 font-semibold uppercase">Delivery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block px-4 py-1 bg-green-100 text-brand-green rounded-full font-bold text-sm uppercase tracking-wide mb-4">Our Services</div>
+                <h2 class="text-4xl font-extrabold text-brand-dark mb-4">We Build and We Deliver</h2>
+                <p class="text-xl text-gray-600">We do more than just sell materials. We help you get the job done right.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Construction Services -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-green hover:-translate-y-1 transition duration-300">
+                    <div class="w-16 h-16 bg-green-100 text-brand-green rounded-xl flex items-center justify-center text-3xl mb-6 shadow-sm">
+                        <i class="fa-solid fa-trowel-bricks"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-dark mb-4">Construction & Site Work</h3>
+                    <p class="text-gray-600 mb-6">We specialize in building strong, beautiful houses for our community. Our team knows how to build safely and on time.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                            <div>
+                                <strong class="text-gray-800">House Building:</strong>
+                                <span class="text-gray-600">From foundations to the roof, we specialize in building homes.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                            <div>
+                                <strong class="text-gray-800">Demolition:</strong>
+                                <span class="text-gray-600">We safely break down old structures to make way for the new.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                            <div>
+                                <strong class="text-gray-800">Site Clearance:</strong>
+                                <span class="text-gray-600">We clean and clear your plot so it is ready for building.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Transport Services -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-blue hover:-translate-y-1 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center text-3xl mb-6 shadow-sm">
+                        <i class="fa-solid fa-truck-moving"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-dark mb-4">Transport & Logistics</h3>
+                    <p class="text-gray-600 mb-6">Need materials moved? Our fleet of tipper trucks is ready to roll. We make sure your materials get to your site safely and on time.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-blue mt-1"></i>
+                            <div>
+                                <strong class="text-gray-800">Material Delivery:</strong>
+                                <span class="text-gray-600">We deliver sand, bricks, and heavy materials straight to your yard.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-blue mt-1"></i>
+                            <div>
+                                <strong class="text-gray-800">Rubble Removal:</strong>
+                                <span class="text-gray-600">We can take away the mess and rubble after your building is done.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-blue mt-1"></i>
+                            <div>
+                                <strong class="text-gray-800">General Transport:</strong>
+                                <span class="text-gray-600">Safe and reliable logistics for all construction needs.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-brand-green text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block px-4 py-1 bg-white/20 text-brand-lightGreen rounded-full font-bold text-sm uppercase tracking-wide mb-4">Top Quality</div>
+                <h2 class="text-4xl font-extrabold mb-4">Materials for Every Job</h2>
+                <p class="text-xl text-green-100">We source the best materials so your buildings stand strong for years to come.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Sand -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-white/20 hover:bg-white/20 transition duration-300">
+                    <img src="images/sand_supplies.webp" alt="Sand Supplies" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-brand-lightGreen flex items-center gap-2">
+                            <i class="fa-solid fa-mound"></i> Sand Supplies
+                        </h3>
+                        <p class="text-gray-100 mb-4">We supply any quantity of sand for your mixing and building needs.</p>
+                        <ul class="space-y-2 text-gray-200 text-sm">
+                            <li><i class="fa-solid fa-angle-right text-brand-lightGreen mr-2"></i> <strong>Building Sand:</strong> For strong mortar.</li>
+                            <li><i class="fa-solid fa-angle-right text-brand-lightGreen mr-2"></i> <strong>Plaster Sand:</strong> Fine finish for walls.</li>
+                            <li><i class="fa-solid fa-angle-right text-brand-lightGreen mr-2"></i> <strong>River Sand:</strong> Coarse for tough concrete.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bricks -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-white/20 hover:bg-white/20 transition duration-300">
+                    <img src="images/bricks.webp" alt="Bricks" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-brand-lightGreen flex items-center gap-2">
+                            <i class="fa-solid fa-cubes-stacked"></i> Bricks
+                        </h3>
+                        <p class="text-gray-100 mb-4">Durable and high-quality bricks to build walls that last.</p>
+                        <ul class="space-y-2 text-gray-200 text-sm">
+                            <li><i class="fa-solid fa-angle-right text-brand-lightGreen mr-2"></i> <strong>Stock Bricks:</strong> Reliable for everyday building.</li>
+                            <li><i class="fa-solid fa-angle-right text-brand-lightGreen mr-2"></i> <strong>Face Bricks:</strong> Neat outside finish.</li>
+                            <li><i class="fa-solid fa-angle-right text-brand-lightGreen mr-2"></i> <strong>Paving Bricks:</strong> Clean driveways.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Materials -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-white/20 hover:bg-white/20 transition duration-300">
+                    <img src="images/building_material+.webp" alt="Building Materials" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-brand-lightGreen flex items-center gap-2">
+                            <i class="fa-solid fa-toolbox"></i> Building Materials
+                        </h3>
+                        <p class="text-gray-100 mb-4">We carry all the hardware basics you need to finish the job.</p>
+                        <ul class="space-y-2 text-gray-200 text-sm">
+                            <li><i class="fa-solid fa-angle-right text-brand-lightGreen mr-2"></i> <strong>Cement:</strong> Top-grade for all mixes.</li>
+                            <li><i class="fa-solid fa-angle-right text-brand-lightGreen mr-2"></i> <strong>Crushed Stone:</strong> For foundations.</li>
+                            <li><i class="fa-solid fa-angle-right text-brand-lightGreen mr-2"></i> <strong>Steel & Timber:</strong> Reinforcing & roofing.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block bg-brand-lightGreen text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-white transition shadow-lg">
+                    Order Materials Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-4xl font-extrabold text-brand-dark mb-4">See Our Work in Action</h2>
+                <p class="text-xl text-gray-600">Take a look at our trucks on the move, our top-quality materials, and the houses we have helped build in and around Soweto.</p>
+            </div>
+
+            <!-- CSS Grid for Gallery -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-xl shadow-md group bg-gray-100">
+                    <img src="images/gallary_1.png" alt="Front loader loading aggregate stone" class="gallery-item w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md group bg-gray-100">
+                    <img src="images/gallery_2.webp" alt="Braa KK delivery truck" class="gallery-item w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md group bg-gray-100">
+                    <img src="images/gallery_4.webp" alt="Heavy earthmoving equipment operating at sand site" class="gallery-item w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md group bg-gray-100">
+                    <img src="images/gallery_5.webp" alt="Residential house brickwork construction in progress" class="gallery-item w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md group bg-gray-100">
+                    <img src="images/gallery_6.webp" alt="Braa KK delivery truck fleet at the depot" class="gallery-item w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md group bg-gray-100">
+                    <img src="images/gallery_7.webp" alt="Braa KK site depot, office, and hardware supplies" class="gallery-item w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md group bg-gray-100">
+                    <img src="images/gallery_8.webp" alt="Aggregates and stone supply sorting" class="gallery-item w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md group bg-gray-100">
+                    <img src="images/gallery_9.webp" alt="Loading building sand onto tipper truck" class="gallery-item w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md group bg-gray-100">
+                    <img src="images/gallery_10.webp" alt="Front-end wheel loader at Protea Glen depot" class="gallery-item w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                
+                <!-- Contact Info -->
+                <div class="md:w-2/5 bg-brand-green text-brand-dark p-10 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-3xl font-extrabold mb-2">Get in Touch</h2>
+                        <p class="text-brand-dark font-medium mb-8 opacity-80">Ready to start your next building project? Need a quick delivery? Call us today or visit our yard!</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-brand-dark text-brand-green rounded-full flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold uppercase opacity-70">Call Us</p>
+                                    <p class="font-extrabold text-xl">076 783 4703</p>
+                                    <p class="font-extrabold text-xl">065 859 7453</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-brand-dark text-brand-green rounded-full flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold uppercase opacity-70">Visit Our Yard</p>
+                                    <p class="font-bold text-lg">Wild Chestnut St,<br>Protea Glen, Soweto, 1819</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-brand-dark text-brand-green rounded-full flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold uppercase opacity-70">Business Hours</p>
+                                    <p class="font-bold text-lg">Mon - Sat: Opens 7:00 AM</p>
+                                    <p class="font-bold text-lg opacity-70">Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <i class="fa-solid fa-tree text-6xl opacity-20"></i>
+                    </div>
+                </div>
+
+                <!-- Contact Form / Map Placeholder -->
+                <div class="md:w-3/5 p-10 flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold text-brand-dark mb-6">Send us a message</h3>
+                    <form onsubmit="event.preventDefault(); alert('Message sent successfully! (This is a demo)');" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none transition" placeholder="John Builder" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none transition" placeholder="082 123 4567" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">What do you need?</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none transition">
+                                <option>Sand & Bricks Delivery</option>
+                                <option>Construction / House Building</option>
+                                <option>Site Clearance / Demolition</option>
+                                <option>Other Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none transition" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-dark text-white font-bold py-4 rounded-lg hover:bg-black transition shadow-lg flex items-center justify-center gap-2">
+                            Send Request <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-green text-gray-200 py-8 border-t border-green-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <img src="images/braa_kk_logo.jpg" alt="BRAA KK Logo" class="h-10 w-10 rounded-full object-contain bg-white p-0.5 shadow-sm">
+                <span class="font-extrabold text-xl text-white tracking-tighter">BRAA KK</span>
+            </div>
+            <p class="text-sm text-center md:text-left">
+                &copy; 2026 BRAA KK Sand & Supplies. Built for Soweto.
+            </p>
+            <div class="flex gap-4">
+                <a href="#home" class="hover:text-white transition">Home</a>
+                <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white text-3xl hover:text-brand-lightGreen transition p-2 focus:outline-none" aria-label="Close image">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-5xl max-h-[90vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Full view" class="max-w-full max-h-[80vh] rounded-lg shadow-2xl object-contain">
+            <p id="lightbox-caption" class="text-white text-center mt-4 text-lg font-medium"></p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                if(menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            });
+
+            // Close mobile menu when clicking a link
+            const links = menu.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                });
+            });
+            
+            // Lightbox functionality
+            const modal = document.getElementById('lightbox-modal');
+            const modalImg = document.getElementById('lightbox-img');
+            const modalCaption = document.getElementById('lightbox-caption');
+            const closeBtn = document.getElementById('lightbox-close');
+
+            document.querySelectorAll('.gallery-item').forEach(img => {
+                img.addEventListener('click', () => {
+                    modalImg.src = img.src;
+                    modalCaption.textContent = img.alt || '';
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    document.body.classList.add('overflow-hidden');
+                });
+            });
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                modalImg.src = '';
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            closeBtn?.addEventListener('click', closeModal);
+            modal?.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+
+            // Override default alert for form submission gracefully
+            window.alert = function(msg) {
+                const messageBox = document.createElement('div');
+                messageBox.className = 'fixed top-24 left-1/2 transform -translate-x-1/2 bg-brand-green text-white px-6 py-3 rounded-lg shadow-xl font-bold z-[100] transition-opacity duration-500';
+                messageBox.innerText = msg;
+                document.body.appendChild(messageBox);
+                setTimeout(() => {
+                    messageBox.style.opacity = '0';
+                    setTimeout(() => messageBox.remove(), 500);
+                }, 3000);
+            };
+        });
+    </script>
+</body>
+</html>
